@@ -43,7 +43,7 @@ data = json.load(f)
 uid = str(user_id)
 if uid not in data:
 data[uid] = []
-data[uid].append({“date”: datetime.now().strftime(”%Y-%m-%d %H:%M”), “text”: text})
+data[uid].append({"date": datetime.now().strftime(”%Y-%m-%d %H:%M”), “text”: text})
 with open(NOTES_FILE, "w", encoding="utf-8") as f:
 json.dump(data, f, ensure_ascii=False, indent=2)
 
