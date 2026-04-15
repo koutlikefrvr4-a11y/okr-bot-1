@@ -12,7 +12,7 @@ filters, ContextTypes, ConversationHandler
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(**name**)
 
-BOT_TOKEN = “8377419529:AAFd5iA7UgUveDd2UueYiEIyE7OJ0hP4UWk”
+BOT_TOKEN = "8377419529:AAFd5iA7UgUveDd2UueYiEIyE7OJ0hP4UWk"
 
 # States for Bayes calculator conversation
 
@@ -24,27 +24,27 @@ BAYES_CHECK_COUNT,
 NOTE_INPUT,
 ) = range(5)
 
-NOTES_FILE = “notes.json”
+NOTES_FILE = "notes.json"
 
 # ─── Helpers ───────────────────────────────────────────────────────────────
 
 def load_notes(user_id: int) -> list:
 if not os.path.exists(NOTES_FILE):
 return []
-with open(NOTES_FILE, “r”, encoding=“utf-8”) as f:
+with open(NOTES_FILE, "r", encoding=“utf-8”) as f:
 data = json.load(f)
 return data.get(str(user_id), [])
 
 def save_note(user_id: int, text: str):
 data = {}
 if os.path.exists(NOTES_FILE):
-with open(NOTES_FILE, “r”, encoding=“utf-8”) as f:
+with open(NOTES_FILE, "r", encoding=“utf-8”) as f:
 data = json.load(f)
 uid = str(user_id)
 if uid not in data:
 data[uid] = []
 data[uid].append({“date”: datetime.now().strftime(”%Y-%m-%d %H:%M”), “text”: text})
-with open(NOTES_FILE, “w”, encoding=“utf-8”) as f:
+with open(NOTES_FILE, "w", encoding=“utf-8”) as f:
 json.dump(data, f, ensure_ascii=False, indent=2)
 
 def main_keyboard():
