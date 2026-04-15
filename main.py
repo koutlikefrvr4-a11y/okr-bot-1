@@ -12,7 +12,7 @@ filters, ContextTypes, ConversationHandler
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(**name**)
 
-BOT_TOKEN = “8450648107:AAFzBzyzRSizPj9ELbJcgK2y5mFxsxMu2tk”
+BOT_TOKEN = “8377419529:AAFd5iA7UgUveDd2UueYiEIyE7OJ0hP4UWk”
 
 # States for Bayes calculator conversation
 
